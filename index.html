@@ -9,8 +9,12 @@
 </head>
 <body>
     <div id="app">
+        <h1>Flashcards</h1>
+        <input type="text" v-model="newCard.question" placeholder="Question">
+        <input type="text" v-model="newCard.answer" placeholder="Answer">
+        <button @click="addCard">Add Card</button>
         <ul>
-            <li @click="toggleCard(card.index)" v-for="card in flashCards">
+            <li @click="toggleCard(card)" v-for="card in flashCards">
                 <h2 v-show="card.show">{{ card.question }}</h2>
                 <h2 v-show="!card.show">{{ card.answer }}</h2>
             </li>
