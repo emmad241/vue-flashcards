@@ -15,9 +15,14 @@ const app = Vue.createApp({
             card.show = !card.show
         },
         addCard() {
-            this.flashCards.push({ ...this.newCard })
-            this.newCard.question = ''
-            this.newCard.answer = ''
+            if (this.newCard.question && this.newCard.answer) {
+                this.flashCards.push({ ...this.newCard })
+                this.newCard.question = ''
+                this.newCard.answer = ''
+            }
+        },
+        shuffleCards() {
+            this.flashCards = this.flashCards.sort(() => Math.random() - 0.5)
         }
     }
 })

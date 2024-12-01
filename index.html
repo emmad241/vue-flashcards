@@ -14,6 +14,7 @@
         <input type="text" v-model="newCard.answer" placeholder="Answer">
         <button @click="addCard">Add Card</button>
         <hr/>
+        <button @click="shuffleCards">Shuffle Cards</button>
         <ul>
             <li @click="toggleCard(card)" v-for="card in flashCards" :class="{ answer: !card.show }">
                 <h2 v-show="card.show">{{ card.question }}</h2>
