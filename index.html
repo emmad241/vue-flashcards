@@ -29,13 +29,13 @@
                 <option disabled value="">Select Deck</option>
                 <option v-for="deck in decks" :value="deck">{{ deck.category }}</option>
             </select>
-            <i id="remove-deck" class="fa-solid fa-trash-can" @click="removeDeck()"></i>
+            <i id="remove-deck" class="fa-solid fa-trash-can" @click="removeDeck()" v-show="selectedDeck.category !== 'All'"></i>
         </div>
         <ul>
             <li v-for="card in selectedDeck.cards" :class="{ answer: !card.show }">
                 <h2 @click="toggleCard(card)" v-show="card.show">{{ card.question }}</h2>
                 <h2 @click="toggleCard(card)" v-show="!card.show">{{ card.answer }}</h2>
-                <i id="remove-card" class="fa-solid fa-trash-can" @click="removeCard(card)"></i>
+                <i id="remove-card" class="fa-solid fa-trash-can" @click="removeCard(card)" v-show="selectedDeck.category !== 'All'"></i>
             </li>
         </ul>
     </div>
