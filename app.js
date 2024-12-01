@@ -3,23 +3,23 @@ const app = Vue.createApp({
         return {
             decks: [
                 { category: 'All', cards: [] },
-                { category: 'Countries', cards: [
-                    { question: 'What is the capital of France?', answer: 'Paris', show: true },
-                    { question: 'What is the capital of Spain?', answer: 'Madrid', show: true },
-                    { question: 'What is the capital of Italy?', answer: 'Rome', show: true },
-                    { question: 'What is the capital of Germany?', answer: 'Berlin', show: true },
+                { category: 'Christmas', cards: [
+                    { question: 'What do you put on top of a Christmas tree?', answer: 'Star', show: true },
+                    { question: 'What do you hang on the fireplace?', answer: 'Stockings', show: true },
+                    { question: 'What do you leave out for Santa?', answer: 'Cookies', show: true },
+                    { question: 'What do you hang on the door?', answer: 'Wreath', show: true },
                 ]},
-                { category: 'Numbers', cards: [
-                    { question: 'What is 1 + 1?', answer: '2', show: true },
-                    { question: 'What is 2 + 2?', answer: '4', show: true },
-                    { question: 'What is 3 + 3?', answer: '6', show: true },
-                    { question: 'What is 4 + 4?', answer: '8', show: true },
+                { category: 'Ireland', cards: [
+                    { question: 'What is the capital of Ireland?', answer: 'Dublin', show: true },
+                    { question: 'What is the national sport of Ireland?', answer: 'Gaelic Football', show: true },
+                    { question: 'What is the national emblem of Ireland?', answer: 'Shamrock', show: true },
+                    { question: 'What is the national colour of Ireland?', answer: 'Green', show: true },
                 ]},
-                { category: 'Colors', cards: [
-                    { question: 'What color is the sky?', answer: 'Blue', show: true },
-                    { question: 'What color is the grass?', answer: 'Green', show: true },
-                    { question: 'What color is the sun?', answer: 'Yellow', show: true },
-                    { question: 'What color is the snow?', answer: 'White', show: true },
+                { category: 'VueJS', cards: [
+                    { question: 'What is the name of the creator of VueJS?', answer: 'Evan You', show: true },
+                    { question: 'What is the name of the official router for VueJS?', answer: 'Vue Router', show: true },
+                    { question: 'What is the name of the official state management for VueJS?', answer: 'Vuex', show: true },
+                    { question: 'What is the name of the official CLI for VueJS?', answer: 'Vue CLI', show: true },
                 ]},
             ],
             selectedDeck: null,
