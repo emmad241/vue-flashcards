@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Flashcards</h1>
     <div id="app">
-        <h1>Flashcards</h1>
         <input type="text" v-model="newCard.question" placeholder="Question">
         <input type="text" v-model="newCard.answer" placeholder="Answer">
         <button @click="addCard">Add Card</button>
+        <hr/>
         <ul>
-            <li @click="toggleCard(card)" v-for="card in flashCards">
+            <li @click="toggleCard(card)" v-for="card in flashCards" :class="{ answer: !card.show }">
                 <h2 v-show="card.show">{{ card.question }}</h2>
                 <h2 v-show="!card.show">{{ card.answer }}</h2>
             </li>
