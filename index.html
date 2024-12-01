@@ -9,7 +9,12 @@
 </head>
 <body>
     <div id="app">
-        
+        <ul>
+            <li @click="toggleCard(card.index)" v-for="card in flashCards">
+                <h2 v-show="card.show">{{ card.question }}</h2>
+                <h2 v-show="!card.show">{{ card.answer }}</h2>
+            </li>
+        </ul>
     </div>
     
     <script src="app.js"></script>
