@@ -84,11 +84,19 @@ const app = Vue.createApp({
         },
         prevCard() {
             if (this.cardIndex > 0) {
+                /** unturn card */
+                if (!this.selectedDeck.cards[this.cardIndex].show) {
+                    this.toggleCard(this.selectedDeck.cards[this.cardIndex]);
+                }   
                 this.cardIndex--;
             }
         },
         nextCard() {
             if (this.cardIndex < this.selectedDeck.cards.length - 1) {
+                /** unturn card */
+                if (!this.selectedDeck.cards[this.cardIndex].show) {
+                    this.toggleCard(this.selectedDeck.cards[this.cardIndex]);
+                }
                 this.cardIndex++;
             }
         }
