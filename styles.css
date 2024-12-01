@@ -82,7 +82,26 @@ li.answer {
     background: #facfff;
 }
 
-.fa-solid {
+.inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.subinputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+#remove-deck {
+    margin: 0 20px;
+}
+
+#remove-card {
     position: absolute;
     bottom: 20px;
     right: 20px;

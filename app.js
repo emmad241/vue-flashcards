@@ -59,6 +59,10 @@ const app = Vue.createApp({
             this.selectedDeck.cards = this.selectedDeck.cards.filter(c => c !== card)
             this.saveCards()
         },
+        removeDeck() {
+            this.decks = this.decks.filter(d => d !== this.selectedDeck)
+            this.saveCards()
+        },
         saveCards() {
             localStorage.setItem('decks', JSON.stringify(this.decks))
         }
