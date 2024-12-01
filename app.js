@@ -23,6 +23,9 @@ const app = Vue.createApp({
         },
         shuffleCards() {
             this.flashCards = this.flashCards.sort(() => Math.random() - 0.5)
+        },
+        removeCard(card) {
+            this.flashCards = this.flashCards.filter(c => c !== card)
         }
     }
 })
