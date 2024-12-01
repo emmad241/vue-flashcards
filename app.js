@@ -10,9 +10,16 @@ const app = Vue.createApp({
             newCard: { question: '', answer: '', show: true }
         }
     },
+    created() {
+        const cards = localStorage.getItem('flash-cards')
+        if (cards) {
+            this.flashCards = JSON.parse(cards)
+        }
+    },
     methods: {
         toggleCard(card) {
             card.show = !card.show
+            this.saveCards()
         },
         addCard() {
             if (this.newCard.question && this.newCard.answer) {
@@ -20,12 +27,18 @@ const app = Vue.createApp({
                 this.newCard.question = ''
                 this.newCard.answer = ''
             }
+            this.saveCards()
         },
         shuffleCards() {
             this.flashCards = this.flashCards.sort(() => Math.random() - 0.5)
+            this.saveCards()
         },
         removeCard(card) {
             this.flashCards = this.flashCards.filter(c => c !== card)
+            this.saveCards()
+        },
+        saveCards() {
+            localStorage.setItem('flash-cards', JSON.stringify(this.flashCards))
         }
     }
 })
