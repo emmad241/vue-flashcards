@@ -24,7 +24,8 @@ const app = Vue.createApp({
             ],
             selectedDeck: null,
             newCard: { question: '', answer: '', show: true },
-            newDeck: { category: '', cards: [] }
+            newDeck: { category: '', cards: [] },
+            cardIndex: 0
         }
     },
     created() {
@@ -80,8 +81,27 @@ const app = Vue.createApp({
         },
         saveCards() {
             localStorage.setItem('decks', JSON.stringify(this.decks));
+        },
+        prevCard() {
+            if (this.cardIndex > 0) {
+                this.cardIndex--;
+            }
+        },
+        nextCard() {
+            if (this.cardIndex < this.selectedDeck.cards.length - 1) {
+                this.cardIndex++;
+            }
+        }
+    },
+    watch: {
+        selectedDeck: {
+            handler(newDeck) {
+                this.cardIndex = 0;
+            },
+            immediate: true
         }
     }
+    
 });
 
 app.mount('#app');

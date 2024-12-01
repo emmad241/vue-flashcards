@@ -46,7 +46,7 @@ button {
     margin: 5px 0;
 }
 
-li {
+.question {
     height: 300px;
     width: 400px;
     display: flex;
@@ -78,8 +78,20 @@ ul {
     padding: 0;
 }
 
-li.answer {
+.question.answer {
     background: #facfff;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    gap: 20px;
+}
+
+.arrow {
+    cursor: pointer;
 }
 
 .inputs {
