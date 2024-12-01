@@ -26,6 +26,16 @@ input {
     outline: none;
 }
 
+select {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 30px 0;
+    outline: none;
+}
+
 button {
     width: 250px;
     height: 40px;

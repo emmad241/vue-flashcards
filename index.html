@@ -11,13 +11,20 @@
 <body>
     <h1>Flashcards</h1>
     <div id="app">
+        <input type="text" v-model="newDeck.category" placeholder="Deck">
+        <button @click="addDeck">Add Deck</button>
+        <hr/>
         <input type="text" v-model="newCard.question" placeholder="Question">
         <input type="text" v-model="newCard.answer" placeholder="Answer">
         <button @click="addCard">Add Card</button>
         <hr/>
         <button @click="shuffleCards">Shuffle Cards</button>
+        <select v-model="selectedDeck" placeholder="Select Deck">
+            <option disabled value="">Select Deck</option>
+            <option v-for="deck in decks" :value="deck">{{ deck.category }}</option>
+        </select>
         <ul>
-            <li v-for="card in flashCards" :class="{ answer: !card.show }">
+            <li v-for="card in selectedDeck.cards" :class="{ answer: !card.show }">
                 <h2 @click="toggleCard(card)" v-show="card.show">{{ card.question }}</h2>
                 <h2 @click="toggleCard(card)" v-show="!card.show">{{ card.answer }}</h2>
                 <i class="fa-solid fa-trash-can" @click="removeCard(card)"></i>
