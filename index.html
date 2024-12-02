@@ -22,23 +22,22 @@
                 <button @click="addCard">Add Card</button>
             </div>
         </div>
-        <hr/>
         <div class="deck-select">
             <select v-model="selectedDeck" placeholder="Select Deck">
                 <option disabled value="">Select Deck</option>
                 <option v-for="deck in decks" :value="deck">{{ deck.category }}</option>
             </select>
-            <i class="deck-btns fa-solid fa-shuffle" @click="shuffleCards" v-show="selectedDeck.category !== 'All'"></i>
+            <i class="deck-btns fa-solid fa-shuffle" @click="shuffleCards"></i>
             <i class="deck-btns fa-solid fa-trash-can" @click="removeDeck()" v-show="selectedDeck.category !== 'All'"></i>
         </div>
         <div class="card" v-if="selectedDeck.cards.length > 0">
-            <i id="prev" class="arrow fa-solid fa-arrow-left" @click="prevCard()" :style="{ visibility: cardIndex > 0 ? 'visible' : 'hidden' }"></i>
+            <i id="prev" class="arrow fa-solid fa-angle-left" @click="prevCard()" :style="{ visibility: cardIndex > 0 ? 'visible' : 'hidden' }"></i>
             <div class="question" :class="{ answer: !selectedDeck.cards[cardIndex].show }">
                 <h2 @click="toggleCard(selectedDeck.cards[cardIndex])" v-show="selectedDeck.cards[cardIndex].show">{{ selectedDeck.cards[cardIndex].question }}</h2>
                 <h2 @click="toggleCard(selectedDeck.cards[cardIndex])" v-show="!selectedDeck.cards[cardIndex].show">{{ selectedDeck.cards[cardIndex].answer }}</h2>
                 <i id="remove-card" class="fa-solid fa-trash-can" @click="removeCard(selectedDeck.cards[cardIndex])" v-show="selectedDeck.category !== 'All'"></i>
             </div>
-            <i id="next" class="arrow fa-solid fa-arrow-right" @click="nextCard()" :style="{ visibility: cardIndex < selectedDeck.cards.length - 1 ? 'visible' : 'hidden' }"></i>
+            <i id="next" class="arrow fa-solid fa-angle-right" @click="nextCard()" :style="{ visibility: cardIndex < selectedDeck.cards.length - 1 ? 'visible' : 'hidden' }"></i>
         </div>
     </div>
     
