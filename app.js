@@ -61,6 +61,10 @@ const app = Vue.createApp({
             this.selectedDeck.cards = this.selectedDeck.cards.sort(() => Math.random() - 0.5);
         },
         removeCard(card) {
+            if (this.cardIndex > 0) {
+                this.cardIndex--;
+            }
+
             this.selectedDeck.cards = this.selectedDeck.cards.filter(c => c !== card);
             this.updateAllDeck();
             this.saveCards();
